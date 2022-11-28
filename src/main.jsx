@@ -8,7 +8,7 @@ import { MoviesContextProvider } from './MoviesContext'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <MoviesContextProvider>
-      <Router  basename={'/movie-watchlist/'}>
+      <Router  basename={'/movie-watchlist'}>
         <App />
       </Router>
     </MoviesContextProvider>

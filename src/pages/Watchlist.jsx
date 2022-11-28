@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext} from "react"
 import { Link } from "react-router-dom"
 import Movie from "../components/Movie"
 import { MoviesContext } from "../MoviesContext"
@@ -19,7 +19,7 @@ function Watchlist() {
                 <div className="movies--no-data">
                     <p>Your watchlist is looking a little empty...</p>
                     <div className="watchlist--add-movies">
-                        <Link to={`?m=${searchedMovie}`}>
+                        <Link to={`../?m=${searchedMovie}`}>
                             <i class="ri-add-circle-fill" />
                         </Link>
                         <p>Lets add some movies!</p>

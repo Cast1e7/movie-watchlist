@@ -11,8 +11,6 @@ function Movies() {
     const [search, setSearch] = useState(searchParams.get("m"))
     const {changeSearchedMovie, moviesList, dataError, isLoading} = useContext(MoviesContext)
 
-
-    console.log(search)
     const moviesElements = moviesList.map(movie => <Movie key={movie.imdbID} movie={movie}/>)
 
     function handleChange(event) {
@@ -40,7 +38,7 @@ function Movies() {
         <main className="container">
             <div className="search">
                 <div className="search--bar">
-                    <i class="ri-search-line"></i>
+                    <i className="ri-search-line"></i>
                     <input 
                         placeholder="Search for a movie" 
                         type="text"

@@ -5,11 +5,7 @@ import { MoviesContext } from "../MoviesContext"
 
 function Watchlist() {
     const {watchlist,searchedMovie} = useContext(MoviesContext)
-
     const watchlistElements = watchlist.map(movie => <Movie key={movie.imdbID} movie={movie}/>)
-          
-    console.log(watchlistElements)
-
 
     return (
         <main className="container">
@@ -20,7 +16,7 @@ function Watchlist() {
                     <p>Your watchlist is looking a little empty...</p>
                     <div className="watchlist--add-movies">
                         <Link to={`../?m=${searchedMovie}`}>
-                            <i class="ri-add-circle-fill" />
+                            <i className="ri-add-circle-fill" />
                         </Link>
                         <p>Lets add some movies!</p>
                     </div>

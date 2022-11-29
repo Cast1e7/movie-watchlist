@@ -5,7 +5,7 @@ import { MoviesContext } from "../MoviesContext";
 function Header() {
     const location = useLocation()
     const {searchedMovie} = useContext(MoviesContext)
-    console.log(location)
+
     return (
         <header>
             <nav  className="container">

@@ -8,13 +8,13 @@ function Movie({movie}) {
 
     const listElement = watchlist.find(item => item.imdbID === movie.imdbID) ? 
         <div className="movie--watchlist">
-            <i class="ri-indeterminate-circle-fill"
+            <i className="ri-indeterminate-circle-fill"
                 onClick={() => removeFromWatchlist(movie)}>
             </i>
             <p>Remove</p>
         </div> :
         <div className="movie--watchlist">
-            <i class="ri-add-circle-fill"
+            <i className="ri-add-circle-fill"
                 onClick={() => addToWatchlist(movie)}>
             </i>
             <p>Watchlist</p>
@@ -26,7 +26,7 @@ function Movie({movie}) {
             <div className="movie--data">
                 <div>
                     <h3 className="movie--title">{movie.Title}</h3>
-                    <i class="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
                     <p className="movie--rating">{movie.imdbRating}</p>
                 </div>
                 <div>

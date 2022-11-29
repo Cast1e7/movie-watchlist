@@ -11,12 +11,6 @@ function MoviesContextProvider({children}) {
     const [isLoading, setIsLoading] = useState(false)
     const [searchedMovie, setSearchedMovie] = useState("")
 
-    console.log(searchedMovie)
-
-    function changeSearchedMovie(search) {
-        setSearchedMovie(search)
-    }
-
     useEffect(() => {
         setIsLoading(true)
         setMoviesList([])
@@ -49,6 +43,13 @@ function MoviesContextProvider({children}) {
         )
    },[moviesIdArr])
 
+   useEffect(() => {
+    localStorage.setItem("watchlist", JSON.stringify(watchlist))
+   },[watchlist])
+    
+   function changeSearchedMovie(search) {
+    setSearchedMovie(search)
+}
    function addToWatchlist(movie) {
     setWatchlist(prevList => [...prevList , movie])
    }
@@ -56,11 +57,6 @@ function MoviesContextProvider({children}) {
    function removeFromWatchlist(movie) {
     setWatchlist(prevList => prevList.filter(item => item.imdbID !== movie.imdbID))
    }
-   
-   useEffect(() => {
-    localStorage.setItem("watchlist", JSON.stringify(watchlist))
-   },[watchlist])
-    
 
     return (
         <MoviesContext.Provider value={{changeSearchedMovie,searchedMovie, moviesList, watchlist, addToWatchlist, removeFromWatchlist, dataError, isLoading}}>

@@ -28,6 +28,7 @@ Design based on figma file from scrimba.
 ## Built with
 
 - CSS(flex, grid)
+- scss
 - React.js
 - React router
 - Vite
